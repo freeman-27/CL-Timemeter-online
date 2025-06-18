@@ -1,0 +1,1 @@
+﻿//var DisplayLocalTimeFunc_SetTimeInterval = setInterval(DisplayLocalTime, 1000);

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- seo -->
+    <!-- <meta name="description" content="WMit: Верстка сайтов, веб-страниц, лендингов. Кроссбраузерная верстка. Управление сайтом. Размещение на хостинг"> -->
+    <meta name="description" content="Разработка программ">
+    <meta name="keywords" content="
+    разработка программ,
+    разработка веб-приложений,
+    программа,
+    приложение,
+    онлайн-приложение,
+    веб-приложение
+    "/> <!-- max 20 keywords -->
+    <meta name="author" content="Popov E.K.">
+    <meta name="generator" content="">
+    <!--end of meta -->
+    <title>CL-Timemeter Online</title>
+    <link rel="icon" href="CL-Timemeter-ClocksImage.ico" type="image/x-icon"/>
+    <!-- styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- custom links -->
+    <!-- bootstrap local -->
+    <link rel="stylesheet" href="css/bootstrap-5.3.3/carousel.css">
+    <link rel="stylesheet" href="css/bootstrap-5.3.3/sticky-footer-navbar.css">
+    <link rel="stylesheet" href="css/bootstrap-5.3.3/headers.css">
+    <link rel="stylesheet" href="css/bootstrap-5.3.3/product.css">
+    <link rel="stylesheet" href="fonts/_fontello/css/fontello.css">
+    <!-- custom links WM -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/color-restyle.css">
+    <link rel="stylesheet" href="css/loaderWMcustom.css">
+    <link rel="stylesheet" href="css/cookies-info.css">
+    <!-- <link rel="stylesheet" href="css/CustomStyles/WarningPageStyles.css"/> -->
+
+    <link href="css/CustomStyles/MainCustomStyles.css" rel="stylesheet" />
+    <link href="css/CustomStyles/Time_Button_Controls_SVG.css" rel="stylesheet" />
+    
+
+    <style>
+        .links-text-hover:hover
+        {
+        color: white;
+        /* border-bottom: 2px solid yellowgreen; */
+        background-color: yellowgreen;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container fixed-top text-center py-3 px-3 d-inline-flex justify-content-between align-items-stretch align-items-center">
+        <!-- <ul class="navbar-nav"> -->
+        <!-- <li> -->
+        <!--<h1 class="display-5 text-light text-center">Apps WMit</h1>-->
+        <!-- </li> -->
+        <!-- <li> -->
+        <!--<a class="nav-link text-light fs-4 links-text-hover" href="https://wmit.online">Main&ensp;<img src="http://wmit.online/img/WhiteFirstLogo3Small.png" height="50px" alt="logo">&ensp; <b class="text-light"></b></a>-->
+        <h1>CL-Timemeter</h1>
+        <button class="btn text-dark btn-transparent" onclick="openHomePage()">wmit.online</button>
+        <!--<hr />-->
+        <!-- </li> -->
+        <!-- </ul>     -->
+    </div>
+    <!-- Application Block -->
+    <main id="mainBlock" class="">
+
+        <div class="container">
+
+            <div id="Timemeter_ContainerBackgr" class="container text-center CustomBG p-5">
+                <p id="SmallAppTimemeterLabel">Секундомер</p>
+                <h3 id="MainTimeMeterLabel" class="display-1">00:00:00</h3>
+                <div class="container d-flex justify-content-center mt-2">
+                    <button type="button" id="StartButtonTimemeter" class="BtnStartDrawing" onclick="ActivateElement_Timemeter(); BG_Randomise_Timemter(); CheckStartClick_Timemeter();"><img src="ImgControl/StartButton_Timemeter.svg" /></button>
+                    <div class="d-block">
+                    <button type="button" id="StopButtonTimemeter" class="d-none BtnStopDrawing" onclick="SetDefaultBG_Timemter(); CheckStopClick_Timemeter(); DeactivateElement_Timemeter();"><img src="ImgControl/StopButton_Timemeter.svg" /></button>
+                    <br>
+                    <button type="button" id="PauseButtonTimemeter" class="d-none BtnPauseDrawing" onclick="PauseTimemeterMethod(); PauseActivate_StyleElementTimemeter()"><img src="ImgControl/PauseButton_Timemeter.svg" /></button>
+                    <button type="button" id="PauseActivated_ButtonTimemeter" class="d-none BtnPauseDrawing" onclick="BG_Randomise_Timemter(); PauseDeactivate_StyleElementTimemeter(); PauseTimemeterMethod();"><img src="ImgControl/PauseButton_Timemeter.svg" /></button>
+                    
+                </div>
+                    <!-- onclick="Enable_BG_Random_Option" -->
+                </div>
+
+
+                <div class="container d-flex justify-content-between">
+                    <!-- <div class="">
+                        <label>Менять фон через 10 секунд:</label>
+                        <button type="button" id="OptionalFunctionChangeBG" class="rounded-circle" onclick=""><img src="" />*</button>
+                    </div> -->
+                    <div>
+                        <label id="Label_Current_Time_TODO" class="text-light"></label>
+                    </div>
+                    <div>
+                        <label id="Label_Background_Value" class="text-light">rgb(-, -, -)</label>
+                    </div>
+                </div>
+                <!--<asp:Button CssClass="mt-5 bg-success rounded-circle" style="height:10em; width:10em;"  ID="Button1" runat="server" Text="ServerExec" OnClick="FromCS" />-->
+            </div>
+            <hr />
+            <div id="Clocks_ContainerBackgr" class="container text-center CustomBG p-5">
+                <p id="SmallAppClockLabel">Местное время</p>
+                <h3 id="LocalClocksLabel" class="display-1">00:00:00</h3>
+                <div class="container d-flex justify-content-center mt-2">
+                    <button type="button" id="StartButtonClocks" class="BtnStartDrawing" onclick="ActiveElement_Clocks(); check_StartClickClocks(); DisplayLocalTime(); BG_Randomise_Clocks();"><img src="ImgControl/StartButton_Timemeter.svg" /></button>
+                    <button type="submit" formnovalidate id="StopButtonClocks" class="d-none" onclick="DeactivateElement_Clocks(); SetDefaultBG_Cocks(); check_StopClickClocks(); DisplayLocalTime();"><img src="ImgControl/StopButton_Timemeter.svg" /></button>
+                </div>
+                <div class="container">
+                    <div class="text-end">
+                        <label id="RGBValueLabel" class="text-light">rgb(-, -, -)</label>
+                    </div>        
+                    <div class="text-start">
+                        <label id="CurrentDate" class="text-light"></label>
+                    </div>
+                </div>
+                <!--
+                <div id="StartButtonClocksBG" class="StartButton CircleButtonStartLayer" onclick="check_StartClickClocks(); DisplayLocalTime(); BG_Randomise_Clocks()">
+                    <div id="StartBtnContentClocks" class="StartButtonClocksBG"></div>
+                    <div id="StopButtonCanvasClocks" class="d-none" onclick="check_StopClickClocks(); clearInterval(internalInterval); DisplayLocalTime(); HideStopBtnClocks()"></div>
+                </div>
+                -->
+            </div>
+            <hr />     
+        </div>
+        <!-- End Application Block -->
+
+
+        
+    </main>
+
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <!-- custom scripts -->
+    <script type="text/javascript" src="js/CustomScripts/Time_intervals.js"> </script>
+    <script type="text/javascript" src="js/CustomScripts/Clocks.js"> </script>
+    <script type="text/javascript" src="js/CustomScripts/ClocksElementFunctions.js"> </script>
+    <script type="text/javascript" src="js/CustomScripts/BG_RandomiseClocks.js"> </script>
+    <script type="text/javascript" src="js/CustomScripts/TimeMeterFunc.js"> </script>
+    <script type="text/javascript" src="js/CustomScripts/TimemeterElementFunctions.js"> </script>
+    <script type="text/javascript" src="js/CustomScripts/BG_RandomiseTimemeter.js"> </script>
+    <script>function openHomePage() { window.open("https://wmit.online", '_self') }</script>
+</body>
+</html>

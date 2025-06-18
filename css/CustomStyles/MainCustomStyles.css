@@ -1,0 +1,13 @@
+﻿:root {
+    --transparentBackground: rgba(255, 255, 255, 0.0);
+    --transparentColourBackground: rgba(150, 200, 100, 0.5);
+    --lightAccent: rgba(255,255,255, 1.0);
+    --lightcolour: rgba(214,237,234, 1.0);
+    --semilightcolour: rgba(140,203,131, 1.0);
+    --maincolour: rgba(92,170,69, 1.0);
+    --activeEelementEventColor: rgb(92, 92, 92);
+}
+
+.CustomBG {
+    background-color: var(--lightcolour);
+}

@@ -1,0 +1,80 @@
+﻿/*//start button*/
+.BtnStartDrawing {
+    border: 4px solid black;
+    width: 10em;
+    height: 10em;
+    border-radius: 10em;
+}
+.BtnStartDrawing img {
+    padding-left: 1em;
+    width: 6em;
+}
+    .BtnStartDrawing:hover {
+        background-color: var(--transparentColourBackground);
+        border: 4px solid black;
+        cursor: pointer;
+    }
+
+    .BtnStartDrawing:Active {
+        background-color: var(--transparentBackground);
+        border: 4px solid yellowgreen;
+        cursor: pointer;
+    }
+
+/*//start button*/
+.BtnPauseDrawing {
+    background-color: var(--transparentBackground);
+
+    border: 4px solid black;
+    width: 10em;
+    height: 10em;
+    border-radius: 10em;
+}
+.BtnPauseDrawing img {
+    height: 5em;
+}
+    .BtnPauseDrawing:hover {
+        background-color: var(--transparentColourBackground);
+        border: 4px solid gray;
+        cursor: pointer;
+    }
+
+    .BtnPauseDrawing:Active {
+        background-color: var(--transparentBackground);
+        border: 4px solid yellowgreen;
+        cursor: pointer;
+    }
+#PauseActivated_ButtonTimemeter{
+    background-color: var(--activeEelementEventColor);
+}
+
+/*//Stop button*/
+.BtnStopClocksDrawing { /*for clocks element*/
+    border: 4px solid black;
+    width: 10em;
+    height: 10em;
+    border-radius: 10em;
+    background-color: rgba(0,0,0,0.0); /*transparent background*/
+}
+.BtnStopClocksDrawing img{
+    width: 4em;
+}
+
+.BtnStopDrawing { /*timemeter stop button drawing */
+    border: 4px solid black;
+    width: 10em;
+    height: 5em;
+    background-color: rgba(0,0,0,0.0); /*transparent background*/
+}
+.BtnStopDrawing img {
+    width: 4em;
+}
+    .BtnStopDrawing:hover {
+        background-color: var(--transparentColourBackground);
+        border: 4px solid gray;
+        cursor: pointer;
+    }
+
+.Hidden_ByDefault{ /*not used*/
+    visibility: hidden;
+}
